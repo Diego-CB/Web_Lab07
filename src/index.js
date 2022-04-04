@@ -3,13 +3,25 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 
 // Component imports
-import Header from './components/Header.jsx'
+import SelectPage from './pages/SelectPage.jsx'
+import Game from './pages/Game.jsx'
+import './styles/master.css'
 
 // App
 const App = () =>  {
+
+    const [isSelecting, setSelect] = React.useState(false)
+    const [level, setLevel] = React.useState(0)
+    const [map, setMap] = React.useState({})
+    
+
     return (
         <React.Fragment>
-            <Header title="Hola Reac"/>
+            {
+                isSelecting ?  
+                    <Game level={level} map={map}/>:
+                    <SelectPage setMap={setMap} setSelect={setSelect} setLevel={setLevel}/>
+            }
         </React.Fragment>
     )
 }
