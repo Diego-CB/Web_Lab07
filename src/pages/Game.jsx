@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/Header.jsx'
-
-import '../styles/game.css'
+import Loading from '../components/Loading.jsx'
+import GameMap from '../components/GameMap.jsx'
 
 const getTitle = (title) => {
 	if (title == 1) return 'Facil'
@@ -9,7 +9,8 @@ const getTitle = (title) => {
 	if (title == 3) return 'Dificil'
 }
 
-const Game = ({level, map}) => {
+const Game = ({ level, map, isSelecting }) => {
+
     return (
         <div className = 'content'>
 			<Header 
@@ -17,8 +18,8 @@ const Game = ({level, map}) => {
 				level={getTitle(level)}
 			/>
 			<div className='main-content'>
-				<h1>juego xd</h1>
-			</div>
+				{map.length ? <GameMap initMap={map}/> : <Loading/>}
+			</div> 
 		</div>
     )
 }

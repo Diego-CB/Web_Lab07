@@ -1,0 +1,51 @@
+
+.main-content {
+    justify-content: center;
+}
+
+.game-map {
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.game-row {
+    display: inline-flex;
+}
+
+.wall {
+    width:  60px;
+    height: 60px;
+}
+
+.vertical {
+    width: 54px;
+    border-left: solid rgb(36, 36, 255) 3px;
+    border-right: solid rgb(36, 36, 255) 3px;
+}
+
+.horizontal {
+    border-top: solid rgb(36, 36, 255) 3px;
+    border-bottom: solid rgb(36, 36, 255) 3px;
+}
+
+.corner {    
+    border: solid rgb(36, 36, 255) 3px;
+}
+
+.empty {
+    background-color: yellow;
+}
+
+.player {
+    border-radius: 100%;
+    background-color: yellow;
+}
+
+
+.goal {
+    border-radius: 100%;
+    background-color: white;
+    border: none;
+}

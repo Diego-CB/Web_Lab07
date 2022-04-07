@@ -1,19 +1,21 @@
 import React from "react"
 
-const handlePuzzle = (size, setLevel) => {    
-    fetch(`https://maze.juanelcaballo.club/?type=json&w=${size}&h=${size}`)
+const handlePuzzle = (width, height, setLevel) => {    
+    fetch(`https://maze.juanelcaballo.club/?type=json&w=${width}&h=${height}`)
     .then(response => response.json())
     .then(result => {
         setLevel(result)
-        console.log('mapa', result)
-        console.log('tipo', typeof(result))
+    })
+    .catch(error => {
+        console.error(error)
+        alert('Error de conexion, intente mas tarde')
     })
 }
 
 const getSize = (value) => {
-    if (value == 1) return 2
-    if (value == 2) return 4 
-    if (value == 2) return 7 
+    if (value == 1) return [2, 2]
+    if (value == 2) return [3, 2] 
+    if (value == 3) return [4, 4] 
 }
 
 const LevelInput = ({title, setSelect, setMap, value, setLevel}) => {
@@ -22,7 +24,8 @@ const LevelInput = ({title, setSelect, setMap, value, setLevel}) => {
             <input 
                 onChange ={() => {
                     setSelect(true)
-                    handlePuzzle(getSize(value), setMap)
+                    const dimensions = getSize(value)
+                    handlePuzzle(dimensions[0], dimensions[1], setMap)
                     setLevel(value)
                 }}
                 type="checkbox"
