@@ -17,35 +17,23 @@
 .wall {
     width:  60px;
     height: 60px;
-}
-
-.vertical {
-    width: 54px;
-    border-left: solid rgb(36, 36, 255) 3px;
-    border-right: solid rgb(36, 36, 255) 3px;
-}
-
-.horizontal {
-    border-top: solid rgb(36, 36, 255) 3px;
-    border-bottom: solid rgb(36, 36, 255) 3px;
-}
-
-.corner {    
-    border: solid rgb(36, 36, 255) 3px;
+    background-color: rgb(27, 27, 140);
+    border: solid rgb(27, 27, 140) 3px;
 }
 
 .empty {
-    background-color: yellow;
+    background-color: black;
+    border: solid black 3px;
 }
 
 .player {
-    border-radius: 100%;
-    background-color: yellow;
+    background-color: black;
+    border: solid black 3px;
 }
 
 
 .goal {
     border-radius: 100%;
     background-color: white;
-    border: none;
+    border: solid black 3px;
 }

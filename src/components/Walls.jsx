@@ -1,4 +1,5 @@
 import React from "react"
+import Player from "./Player.jsx"
 
 const wallConverter = (type) => {
     if (type === '+') return 'corner'
@@ -16,12 +17,14 @@ const Walls = ({ type }) => {
     if (stringType === 'corner') {
         return (
             // Validar que tipo de esquina es
-            <div className={'wall ' + stringType}>{type}</div>
+            <div className={'wall ' + stringType}></div>
         )
     }
 
+    if (stringType == 'player') return <Player/>
+
     return (
-        <div className={'wall ' + stringType}>{type}</div> 
+        <div className={'wall ' + stringType}></div> 
     )
 }
 
