@@ -4,4 +4,4 @@ Laboratorio 7 de Web
 > ## Commands
 >
 > - dev server: npm start
-> - dev server: npm start
+> - Production build: npm run build
