@@ -1,6 +1,39 @@
-
+.player {
+    position: relative;
+    transition: all ease-out 350ms;
+}
 
 .player img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    transition: transform 250ms;
+}
+
+.faceRight {transform: rotateZ(0deg)}
+
+.faceDown {transform: rotateZ(90deg)}
+
+.faceUp {transform: rotateZ(270deg)}
+
+.faceLeft {transform: rotateZ(-180deg)}
+
+
+@keyframes win {
+    from {
+        height: 100%;
+        width: 100%;
+        transform: rotateZ(0);
+    }
+    to {
+        height: 110%;
+        width:  110%;
+        transform: rotateZ(360deg);
+    }
+}
+
+.winned {
+    animation-name: win;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }

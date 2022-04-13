@@ -9,7 +9,10 @@ const getTitle = (title) => {
 	if (title == 3) return 'Dificil'
 }
 
-const Game = ({ level, map, isSelecting }) => {
+const Game = ({ level, map }) => {
+
+	const [win, setWin] = React.useState(false)
+	const gameState = win ? 'winned' : 'in-game'
 
     return (
         <div className = 'content'>
@@ -17,8 +20,11 @@ const Game = ({ level, map, isSelecting }) => {
 				title='Juego'
 				level={getTitle(level)}
 			/>
-			<div className='main-content'>
-				{map.length ? <GameMap initMap={map}/> : <Loading/>}
+			<div className={'main-content ' + gameState}>
+				{map.length 
+					? 
+					<GameMap initMap={map} setWin={setWin}/> 
+					: <Loading/>}
 			</div> 
 		</div>
     )
