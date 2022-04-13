@@ -1,6 +1,6 @@
 node_modules
 dist/bundle.js
 dist/bundle.js.LICENSE.txt
-dist/!*.jp*g
-dist/!*.pn*g
-dist/!*.gi*f
+dist/9140d005fe25617c262c29a29d386490.png
+dist/39c7aa8f9e43ed985516ff4a2f67a57e.gif 
+dist/1ea2ca16c89df4ecfe702af557908e8f.gif
