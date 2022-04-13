@@ -18,7 +18,7 @@ const Walls = ({ type, setMap, map, setWin }) => {
     if (stringType == 'goal') return <Goal/>
     if (stringType == 'player') return (
         <Player 
-            setWin={setWin}
+            winned={setWin}
             setMap={setMap}
             map={map}
         />

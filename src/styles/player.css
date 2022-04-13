@@ -26,14 +26,14 @@
         transform: rotateZ(0);
     }
     to {
-        height: 110%;
-        width:  110%;
+        height: 105%;
+        width:  105%;
         transform: rotateZ(360deg);
     }
 }
 
 .winned {
     animation-name: win;
-    animation-duration: 1s;
+    animation-duration: 900ms;
     animation-iteration-count: infinite;
 }

@@ -67,7 +67,7 @@ const winnedMap = (map) => {
 let handleKeyPress
 
 // Componente
-const Player = ({ map, setMap }) => {
+const Player = ({ map, setMap, winned }) => {
 
     const [virtualMap, setVMap] = React.useState(map)
     const [direction, setDirection] = React.useState('faceRight')
@@ -92,7 +92,7 @@ const Player = ({ map, setMap }) => {
         if(!checkWin(virtualMap)) return
         setMap(winnedMap(map))
         setWin(true)
-        
+        winned(true)
     }, [moved])
 
     const position = win ? [
