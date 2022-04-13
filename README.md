@@ -1,5 +1,5 @@
 # Web_Lab07
-Jugo de Laberinto con tematica de Pac-Man
+Juego de Laberinto con tematica de Pac-Man
 
 > ## Commands
 >
