@@ -1,3 +1,13 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * SelectPage.jsx
+ * - Pagina de seleccion de nivel
+ *****************************************/
+
+
 import React from 'react'
 import Header from '../components/Header.jsx'
 import LevelInput from '../components/LevelInput.jsx'

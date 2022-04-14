@@ -1,3 +1,15 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * Walls.jsx
+ * - Se encarga de traducir la informacion
+ *   recibida del API del laberinto a 
+ *   componentes de React con los que el
+ *   usuario puede interactuar
+ *****************************************/
+
 import React from "react"
 import Player from "./Player.jsx"
 import Goal from "./Goal.jsx"

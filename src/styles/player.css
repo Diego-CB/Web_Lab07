@@ -1,3 +1,14 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * player.css
+ * - Contiene el estilo del personaje
+ *   principal del juego
+ *****************************************/
+
+
 .player {
     position: relative;
     transition: all ease-out 350ms;

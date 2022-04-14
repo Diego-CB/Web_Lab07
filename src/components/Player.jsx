@@ -1,3 +1,14 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * GameMap.jsx
+ * - Componente que se encarga de las
+ *   mecanicas de juego y simula el
+ *   personaje principal como pac-man
+ *****************************************/
+
 import React from 'react'
 import pacmanSprite from '../Images/sprite.gif'
 

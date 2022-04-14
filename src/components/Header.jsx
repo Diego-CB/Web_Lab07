@@ -1,3 +1,12 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * Header.jsx
+ * - Header reusable del sitio Web
+ *****************************************/
+
 import React from 'react'
 import '../styles/header.css'
 import logo from '../Images/logo.png'

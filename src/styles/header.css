@@ -1,3 +1,13 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * header.css
+ * - Contiene el estilo del Header
+ *****************************************/
+
+
 header {
     width: calc(100% - 8x);
     height: 80px;

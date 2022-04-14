@@ -1,3 +1,14 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * LevelInput.jsx
+ * - Componente que se encarga de la 
+ *   conexion con el servidor del juego
+ *   y seleccion de nivel
+ *****************************************/
+
 import React from "react"
 
 const handlePuzzle = (width, height, setLevel) => {    

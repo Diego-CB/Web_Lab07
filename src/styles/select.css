@@ -1,3 +1,14 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * select.css
+ * - Contiene el estilo de la pagina 
+ *   de seleccion de nivel
+ *****************************************/
+
+
 .main-content {
     display: flex;
     flex-direction: column;

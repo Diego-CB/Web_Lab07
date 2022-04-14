@@ -1,3 +1,13 @@
+/****************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * Game.jsx
+ * - Pagina de juego, en ella se engloban
+ * 	 los componentes usados en el gameplay
+ *****************************************/
+
 import React from 'react'
 import Header from '../components/Header.jsx'
 import Loading from '../components/Loading.jsx'

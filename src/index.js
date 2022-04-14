@@ -1,3 +1,14 @@
+/********************************************
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologias Web
+ * Autor: Diego Cordova - 20212
+ * 
+ * index.js
+ * - Se encarga de renderizar los componentes,
+ *   ademas de empezar con el proyecto
+ *********************************************/
+
+
 // React imports
 import React from 'react'
 import { createRoot } from 'react-dom/client'
@@ -20,15 +31,20 @@ const App = () =>  {
     const [level, setLevel] = React.useState(0)
     const [map, setMap] = React.useState({})
     
+    if (isSelecting) return (
+        <Game 
+            level={level} 
+            map={map} 
+            isSelecting={isSelecting}
+        />
+    )
 
     return (
-        <React.Fragment>
-            {
-                isSelecting ?  
-                    <Game level={level} map={map} isSelecting={isSelecting}/>:
-                    <SelectPage setMap={setMap} setSelect={setSelect} setLevel={setLevel}/>
-            }
-        </React.Fragment>
+        <SelectPage 
+            setMap={setMap} 
+            setSelect={setSelect} 
+            setLevel={setLevel}
+        />
     )
 }
 
