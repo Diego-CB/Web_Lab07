@@ -75,8 +75,6 @@ const winnedMap = (map) => {
     return temp_map
 }
 
-let handleKeyPress
-
 // Componente
 const Player = ({ map, setMap, winned }) => {
 
@@ -87,10 +85,7 @@ const Player = ({ map, setMap, winned }) => {
 
     
     handleKeyPress = (event) => {
-        const newDir = changeDirection(event.key)
-        if (newDir === 0) return
-        setMoved(true)
-        setDirection(newDir)
+
     }
     
     React.useEffect(() => {
@@ -105,6 +100,15 @@ const Player = ({ map, setMap, winned }) => {
         setWin(true)
         winned(true)
     }, [moved])
+
+    React.useEffect(() => {
+        window.addEventListener("keydown", (event) => {
+            const newDir = changeDirection(event.key)
+            if (newDir === 0) return
+            setMoved(true)
+            setDirection(newDir)
+        })
+    }, [])
 
     const position = win ? [
         virtualMap.length - 2,
@@ -127,10 +131,5 @@ const Player = ({ map, setMap, winned }) => {
         </div>
     )
 }
-
-// Event Listener para movimientos del jugador
-window.addEventListener("keydown", (event) => {
-    handleKeyPress(event)
-})
 
 export default Player

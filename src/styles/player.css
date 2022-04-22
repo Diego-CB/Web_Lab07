@@ -11,7 +11,7 @@
 
 .player {
     position: relative;
-    transition: all ease-out 350ms;
+    transition: all ease-out 300ms;
 }
 
 .player img {
