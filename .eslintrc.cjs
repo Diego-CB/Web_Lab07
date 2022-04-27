@@ -18,5 +18,8 @@ module.exports = {
     'react'
   ],
   rules: {
+    'comma-dangle': 2,
+    'react/react-in-jsx-scope': 0,
+    'react/jsx-filename-extension': 0
   }
 }
