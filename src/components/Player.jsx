@@ -122,7 +122,11 @@ const Player = ({ map, setMap, winned }) => {
       }}
       className='wall player'
     >
-      <img className={direction + isWinned} src={pacmanSprite} alt="player" />
+      <img
+        className={direction + isWinned}
+        src={pacmanSprite}
+        alt="player"
+      />
     </div>
   )
 }
