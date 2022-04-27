@@ -82,11 +82,6 @@ const Player = ({ map, setMap, winned }) => {
     const [direction, setDirection] = React.useState('faceRight')
     const [moved, setMoved] = React.useState(false)
     const [win, setWin] = React.useState(false)
-
-    
-    handleKeyPress = (event) => {
-
-    }
     
     React.useEffect(() => {
         if (!moved) return
