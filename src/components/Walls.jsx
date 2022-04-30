@@ -1,4 +1,4 @@
-/****************************************
+/* ***************************************
  * Universidad del Valle de Guatemala
  * Sistemas y Tecnologias Web
  * Autor: Diego Cordova - 20212
@@ -8,7 +8,7 @@
  *   recibida del API del laberinto a
  *   componentes de React con los que el
  *   usuario puede interactuar
- *****************************************/
+ **************************************** */
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -23,12 +23,19 @@ const wallConverter = (type) => {
   if (type === 'p') return 'player'
   if (type === 'g') return 'goal'
   if (type === ' ') return 'empty'
+  return undefined
 }
 
-const Walls = ({ type, setMap, map, setWin }) => {
+// Component
+const Walls = ({
+  type,
+  setMap,
+  map,
+  setWin,
+}) => {
   const stringType = wallConverter(type)
 
-  if (stringType === 'goal') return <Goal/>
+  if (stringType === 'goal') return <Goal />
   if (stringType === 'player') {
     return (
       <Player
@@ -39,14 +46,14 @@ const Walls = ({ type, setMap, map, setWin }) => {
     )
   }
 
-  return <div className={'wall ' + stringType}></div>
+  return <div className={'wall ' + stringType} />
 }
 
 Walls.propTypes = {
-  type: PropTypes.string,
-  setMap: PropTypes.func,
-  map: PropTypes.object,
-  setWin: PropTypes.func
+  type: PropTypes.string.isRequired,
+  setMap: PropTypes.func.isRequired,
+  map: PropTypes.arrayOf(Array).isRequired,
+  setWin: PropTypes.func.isRequired,
 }
 
 export default Walls

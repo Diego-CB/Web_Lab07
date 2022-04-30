@@ -1,4 +1,4 @@
-/****************************************
+/* ***************************************
  * Universidad del Valle de Guatemala
  * Sistemas y Tecnologias Web
  * Autor: Diego Cordova - 20212
@@ -7,7 +7,7 @@
  * - Componente que se encarga de la
  *   conexion con el servidor del juego
  *   y seleccion de nivel
- *****************************************/
+ **************************************** */
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -18,42 +18,45 @@ const handlePuzzle = (width, height, setLevel) => {
     .then(result => {
       setLevel(result)
     })
-    .catch(error => {
-      console.error(error)
-      alert('Error de conexion, intente mas tarde')
-    })
+    .catch(error => console.warn('Error de conexion, intente mas tarde\n', error))
 }
 
 const getSize = (value) => {
   if (value === 1) return [2, 2]
   if (value === 2) return [3, 2]
   if (value === 3) return [4, 4]
+  return undefined
 }
 
-const LevelInput = ({ title, setSelect, setMap, value, setLevel }) => {
-  return (
-    <div className = 'adminInput'>
-      <input
-        onChange ={() => {
-          setSelect(true)
-          const dimensions = getSize(value)
-          handlePuzzle(dimensions[0], dimensions[1], setMap)
-          setLevel(value)
-        }}
-        type="checkbox"
-      />
-      <label>{title}</label>
-    </div>
-  )
-}
+// Component
+const LevelInput = ({
+  title,
+  setSelect,
+  setMap,
+  value,
+  setLevel,
+}) => (
+  <div className="adminInput">
+    <input
+      onChange={() => {
+        setSelect(true)
+        const dimensions = getSize(value)
+        handlePuzzle(dimensions[0], dimensions[1], setMap)
+        setLevel(value)
+      }}
+      type="checkbox"
+    />
+    <h3>{title}</h3>
+  </div>
+)
 
 // Props Validation
 LevelInput.propTypes = {
-  title: PropTypes.string,
-  setSelect: PropTypes.func,
-  setMap: PropTypes.func,
-  value: PropTypes.any,
-  setLevel: PropTypes.func
+  title: PropTypes.string.isRequired,
+  setSelect: PropTypes.func.isRequired,
+  setMap: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired,
+  setLevel: PropTypes.func.isRequired,
 }
 
 export default LevelInput

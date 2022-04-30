@@ -1,4 +1,4 @@
-/********************************************
+/* *******************************************
  * Universidad del Valle de Guatemala
  * Sistemas y Tecnologias Web
  * Autor: Diego Cordova - 20212
@@ -6,7 +6,7 @@
  * index.js
  * - Se encarga de renderizar los componentes,
  *   ademas de empezar con el proyecto
- *********************************************/
+ ******************************************** */
 
 // React imports
 import React from 'react'
@@ -25,10 +25,11 @@ const changeIcon = () => {
 
 // App
 const App = () => {
-  changeIcon()
   const [isSelecting, setSelect] = React.useState(false)
   const [level, setLevel] = React.useState(0)
-  const [map, setMap] = React.useState({})
+  const [map, setMap] = React.useState([])
+
+  React.useEffect(() => changeIcon(), [])
 
   if (isSelecting) {
     return (
@@ -51,4 +52,4 @@ const App = () => {
 
 // Render
 const getRoot = () => document.getElementById('root')
-createRoot(getRoot()).render(<App/>)
+createRoot(getRoot()).render(<App />)

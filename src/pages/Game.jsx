@@ -1,4 +1,4 @@
-/****************************************
+/* ***************************************
  * Universidad del Valle de Guatemala
  * Sistemas y Tecnologias Web
  * Autor: Diego Cordova - 20212
@@ -6,7 +6,7 @@
  * Game.jsx
  * - Pagina de juego, en ella se engloban
  *   los componentes usados en el gameplay
- *****************************************/
+ **************************************** */
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -21,6 +21,7 @@ const getTitle = (title) => {
   if (title === 1) return 'Facil'
   if (title === 2) return 'Normal'
   if (title === 3) return 'Dificil'
+  return undefined
 }
 
 const Game = ({ level, map }) => {
@@ -29,20 +30,22 @@ const Game = ({ level, map }) => {
   const headerTitle = win ? 'Has Ganado!!' : 'Juego'
 
   return (
-    <div className = 'content'>
+    <div className="content">
       <Header
         title={headerTitle}
         level={getTitle(level)}
       />
       <div className={'main-content ' + gameState}>
         {win
-          ? <div className='finish'><a href=''>Jugar otra vez</a></div>
-          : ''
-        }
-        {map.length
-          ? <GameMap initMap={map} setWin={setWin}/>
-          : <Loading/>
-        }
+          ? (
+            <div className="finish">
+              <a href="./index.html">Jugar otra vez</a>
+            </div>
+          )
+          : ''}
+        {map.length === 0
+          ? <Loading />
+          : <GameMap initMap={map} setWin={setWin} />}
       </div>
     </div>
   )
@@ -50,8 +53,8 @@ const Game = ({ level, map }) => {
 
 // Props validation
 Game.propTypes = {
-  level: PropTypes.number,
-  map: PropTypes.object
+  level: PropTypes.number.isRequired,
+  map: PropTypes.arrayOf(Array).isRequired,
 }
 
 export default Game

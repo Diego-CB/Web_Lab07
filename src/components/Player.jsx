@@ -1,4 +1,4 @@
-/****************************************
+/* ***************************************
  * Universidad del Valle de Guatemala
  * Sistemas y Tecnologias Web
  * Autor: Diego Cordova - 20212
@@ -7,7 +7,7 @@
  * - Componente que se encarga de las
  *   mecanicas de juego y simula el
  *   personaje principal como pac-man
- *****************************************/
+ **************************************** */
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -21,7 +21,7 @@ const changeDirection = (key) => {
   if (['ArrowUp', 'w'].includes(key)) return 'faceUp'
   if (['ArrowLeft', 'a'].includes(key)) return 'faceLeft'
   if (['ArrowDown', 's'].includes(key)) return 'faceDown'
-  //  return 0
+  return undefined
 }
 
 const getNewLocation = (location, direction) => {
@@ -29,6 +29,7 @@ const getNewLocation = (location, direction) => {
   if (direction === 'faceLeft') return [location[0], location[1] - 1]
   if (direction === 'faceUp') return [location[0] - 1, location[1]]
   if (direction === 'faceDown') return [location[0] + 1, location[1]]
+  return undefined
 }
 
 const validateLocation = (map, location) => {
@@ -45,7 +46,7 @@ const movePLayer = (actual, newLocation, map) => {
 }
 
 const getLocation = (gameMap, char) => {
-  const row = gameMap.filter(row => row.includes(char))
+  const row = gameMap.filter(fila => fila.includes(char))
   if (row.length === 0) return false
 
   const indexA = gameMap.indexOf(row[0])
@@ -105,10 +106,9 @@ const Player = ({ map, setMap, winned }) => {
 
   const position = win
     ? [
-        virtualMap.length - 2,
-        virtualMap[0].length - 2
-      ]
-    : getLocation(virtualMap, 'p')
+      virtualMap.length - 2,
+      virtualMap[0].length - 2,
+    ] : getLocation(virtualMap, 'p')
 
   const offsetY = 64.8 * (position[0] - 1)
   const offsetX = 64.8 * (position[1] - 1)
@@ -118,9 +118,9 @@ const Player = ({ map, setMap, winned }) => {
     <div
       style={{
         top: `${offsetY}px`,
-        left: `${offsetX}px`
+        left: `${offsetX}px`,
       }}
-      className='wall player'
+      className="wall player"
     >
       <img
         className={direction + isWinned}
@@ -133,9 +133,9 @@ const Player = ({ map, setMap, winned }) => {
 
 // Props validation
 Player.propTypes = {
-  map: PropTypes.object,
-  setMap: PropTypes.func,
-  winned: PropTypes.bool
+  map: PropTypes.arrayOf(Array).isRequired,
+  setMap: PropTypes.func.isRequired,
+  winned: PropTypes.func.isRequired,
 }
 
 export default Player
