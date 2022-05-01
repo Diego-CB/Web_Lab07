@@ -34,7 +34,7 @@ module.exports = {
     }],
     'prefer-template': 0,
     'arrow-parens': [0, 'as-needed'],
-    'no-console': [2, {
+    'no-console': [1, {
       allow: ['warn', 'error'],
     }],
   },
